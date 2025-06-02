@@ -1,0 +1,536 @@
+/* Import futuristic fonts */
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap");
+
+/* Global dark theme with cyber background */
+.stApp {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+  color: #00ffff;
+  font-family: "Rajdhani", sans-serif;
+}
+
+/* Animated background grid */
+.stApp::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: gridMove 20s linear infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes gridMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
+}
+
+/* Main title styling */
+h1 {
+  font-family: "Orbitron", monospace !important;
+  font-weight: 900 !important;
+  color: #00ffff !important;
+  text-align: center !important;
+  font-size: 3rem !important;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff,
+    0 0 40px #00ffff;
+  border: none !important;
+  padding: 2rem 0 !important;
+  margin-bottom: 2rem !important;
+  animation: titleGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+  from {
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+  }
+  to {
+    text-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff,
+      0 0 50px #00ffff;
+  }
+}
+
+/* Subtitle styling */
+.stApp > div > div > div > div > div:nth-child(2) {
+  text-align: center;
+  color: #ff00ff;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 10px #ff00ff;
+}
+
+/* Sidebar styling */
+.st-emotion-cache-tj3uvl {
+  background: linear-gradient(180deg, #0f0f23 0%, #1a1a2e 100%) !important;
+  border-right: 2px solid #00ffff !important;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3) !important;
+}
+
+/* Sidebar headers */
+.st-emotion-cache-tj3uvl h2 {
+  color: #00ffff !important;
+  font-family: "Orbitron", monospace !important;
+  text-shadow: 0 0 10px #00ffff !important;
+  border-bottom: 1px solid #00ffff !important;
+  padding-bottom: 0.5rem !important;
+}
+
+/* Model cards - cyber style */
+.model-card {
+  background: linear-gradient(145deg, #1a1a2e, #16213e) !important;
+  border: 2px solid #00ffff !important;
+  border-radius: 15px !important;
+  padding: 1.5rem !important;
+  margin-bottom: 1.5rem !important;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3),
+    inset 0 0 20px rgba(0, 255, 255, 0.1) !important;
+  transition: all 0.3s ease !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.model-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.model-card:hover::before {
+  left: 100%;
+}
+
+.model-card:hover {
+  transform: translateY(-5px) scale(1.02) !important;
+  border-color: #ff00ff !important;
+  box-shadow: 0 10px 30px rgba(255, 0, 255, 0.4),
+    inset 0 0 30px rgba(255, 0, 255, 0.1) !important;
+}
+
+/* Error cards */
+.error-card {
+  border-color: #ff0040 !important;
+  background: linear-gradient(145deg, #2e1a1a, #3e1616) !important;
+  box-shadow: 0 0 20px rgba(255, 0, 64, 0.3),
+    inset 0 0 20px rgba(255, 0, 64, 0.1) !important;
+}
+
+/* Model names */
+.model-name {
+  font-family: "Orbitron", monospace !important;
+  font-weight: 700 !important;
+  color: #00ffff !important;
+  font-size: 1.3rem !important;
+  text-shadow: 0 0 10px #00ffff !important;
+  margin-bottom: 1rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+}
+
+/* Response text */
+.response-text {
+  color: #e0e0e0 !important;
+  line-height: 1.8 !important;
+  font-size: 1rem !important;
+  text-shadow: 0 0 5px rgba(224, 224, 224, 0.3) !important;
+}
+
+/* Error text */
+.error-text {
+  color: #ff4081 !important;
+  font-style: italic !important;
+  text-shadow: 0 0 10px #ff4081 !important;
+}
+
+/* Buttons - cyber style */
+.stButton > button {
+  background: linear-gradient(45deg, #00ffff, #ff00ff) !important;
+  color: #000 !important;
+  font-family: "Orbitron", monospace !important;
+  font-weight: bold !important;
+  padding: 0.75rem 2rem !important;
+  border: none !important;
+  border-radius: 25px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5),
+    inset 0 0 20px rgba(255, 255, 255, 0.1) !important;
+  transition: all 0.3s ease !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.stButton > button:hover {
+  background: linear-gradient(45deg, #ff00ff, #00ffff) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 5px 25px rgba(255, 0, 255, 0.6),
+    inset 0 0 30px rgba(255, 255, 255, 0.2) !important;
+}
+
+.stButton > button:active {
+  transform: translateY(0) !important;
+}
+
+/* Text input styling */
+.stTextInput > div {
+  background: rgba(26, 26, 46, 0.8) !important;
+  border: 2px solid #00ffff !important;
+  border-radius: 10px !important;
+  color: #00ffff !important;
+  font-family: "Rajdhani", sans-serif !important;
+  font-size: 1rem !important;
+  box-shadow: inset 0 0 10px rgba(0, 255, 255, 0.2) !important;
+}
+.stTextArea > div > div > textarea {
+  background: rgba(26, 26, 46, 0.8) !important;
+  border: 2px solid #00ffff !important;
+  border-radius: 10px !important;
+  color: #00ffff !important;
+  font-family: "Rajdhani", sans-serif !important;
+  font-size: 1rem !important;
+  padding: 1rem !important;
+  box-shadow: inset 0 0 10px rgba(0, 255, 255, 0.2) !important;
+}
+
+.stTextInput > div > div> input:focus,
+.stTextArea > div > div > textarea:focus {
+  border-color: #ff00ff !important;
+  box-shadow: inset 0 0 10px rgba(255, 0, 255, 0.2),
+    0 0 20px rgba(255, 0, 255, 0.3) !important;
+}
+
+/* Checkboxes */
+.stCheckbox > label {
+  color: #00ffff !important;
+  font-family: "Rajdhani", sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 1.1rem !important;
+}
+
+.st-b6, .st-b5, .st-b4, .st-b3 {
+  background-color: #ff00ff !important;
+  border: 2px solid #00ffff !important;
+  color: #000 !important;
+}
+.stMarkdown > div > hr {
+  border: 1px solid #00ffff !important;
+  margin: 1rem 0 !important;
+}
+
+/* Spinner styling */
+.stSpinner > div {
+  border-top-color: #00ffff !important;
+  border-right-color: #ff00ff !important;
+}
+
+/* Success/warning messages */
+
+/* Base alert styling */
+.stAlert {
+  margin: 1rem 0 !important;
+}
+
+/* Alert container - the main wrapper */
+.stAlert .stAlertContainer {
+  background: linear-gradient(135deg, rgba(10, 10, 20, 0.9), rgba(26, 26, 46, 0.8)) !important;
+  backdrop-filter: blur(15px) !important;
+  border: 2px solid #00ffff !important;
+  border-radius: 12px !important;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.3), inset 0 0 15px rgba(0, 255, 255, 0.1) !important;
+  padding: 1.2rem !important;
+  position: relative !important;
+  overflow: hidden !important;
+  font-family: "Rajdhani", sans-serif !important;
+}
+
+/* Scanning line animation */
+.stAlert .stAlertContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00ffff, transparent);
+  animation: alertScan 2s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes alertScan {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Success alerts */
+.stAlert .stAlertContainer:has([data-testid="stAlertContentSuccess"]),
+.stAlert .stAlertContainer.st-bw.st-bx.st-by.st-c9:has([data-testid="stAlertContentSuccess"]) {
+  border-color: #00ff9d !important;
+  background: linear-gradient(135deg, rgba(0, 255, 157, 0.15), rgba(10, 20, 15, 0.9)) !important;
+  box-shadow: 0 0 25px rgba(0, 255, 157, 0.4), inset 0 0 15px rgba(0, 255, 157, 0.1) !important;
+}
+
+.stAlert .stAlertContainer::before:has([data-testid="stAlertContentSuccess"]) {
+  background: linear-gradient(90deg, transparent, #00ff9d, transparent) !important;
+}
+
+/* Error alerts */
+.stAlert .stAlertContainer:has([data-testid="stAlertContentError"]) {
+  border-color: #ff3864 !important;
+  background: linear-gradient(135deg, rgba(255, 56, 100, 0.15), rgba(20, 10, 15, 0.9)) !important;
+  box-shadow: 0 0 25px rgba(255, 56, 100, 0.4), inset 0 0 15px rgba(255, 56, 100, 0.1) !important;
+  animation: errorPulse 1s ease-in-out infinite alternate;
+}
+
+@keyframes errorPulse {
+  0% {
+    box-shadow: 0 0 25px rgba(255, 56, 100, 0.4), inset 0 0 15px rgba(255, 56, 100, 0.1);
+  }
+  100% {
+    box-shadow: 0 0 35px rgba(255, 56, 100, 0.6), inset 0 0 25px rgba(255, 56, 100, 0.2);
+  }
+}
+
+/* Warning alerts */
+.stAlert .stAlertContainer:has([data-testid="stAlertContentWarning"]) {
+  border-color: #ffb627 !important;
+  background: linear-gradient(135deg, rgba(255, 182, 39, 0.15), rgba(20, 18, 10, 0.9)) !important;
+  box-shadow: 0 0 25px rgba(255, 182, 39, 0.4), inset 0 0 15px rgba(255, 182, 39, 0.1) !important;
+}
+
+/* Alert content styling */
+[data-testid="stAlertContentSuccess"] {
+  color: #00ff9d !important;
+  text-shadow: 0 0 10px rgba(0, 255, 157, 0.5) !important;
+}
+
+[data-testid="stAlertContentError"] {
+  color: #ff3864 !important;
+  text-shadow: 0 0 10px rgba(255, 56, 100, 0.5) !important;
+}
+
+[data-testid="stAlertContentWarning"] {
+  color: #ffb627 !important;
+  text-shadow: 0 0 10px rgba(255, 182, 39, 0.5) !important;
+}
+
+/* Alert text content */
+.stAlert [data-testid="stMarkdownContainer"] p {
+  font-family: "Rajdhani", sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 1.1rem !important;
+  letter-spacing: 0.5px !important;
+  margin: 0 !important;
+  text-transform: uppercase !important;
+}
+
+/* Alert icon container */
+.stAlert .st-emotion-cache-1ii4qqd {
+  display: flex !important;
+  align-items: center !important;
+  position: relative !important;
+}
+
+/* Add cyber icons using pseudo-elements */
+.stAlert .st-emotion-cache-1ii4qqd::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  filter: drop-shadow(0 0 8px currentColor);
+  flex-shrink: 0;
+}
+
+/* Success icon */
+.stAlert .stAlertContainer:has([data-testid="stAlertContentSuccess"]) .st-emotion-cache-1ii4qqd::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300ff9d'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z'/%3E%3C/svg%3E");
+}
+
+/* Error icon */
+.stAlert .stAlertContainer:has([data-testid="stAlertContentError"]) .st-emotion-cache-1ii4qqd::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff3864'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z'/%3E%3C/svg%3E");
+}
+
+/* Warning icon */
+.stAlert .stAlertContainer:has([data-testid="stAlertContentWarning"]) .st-emotion-cache-1ii4qqd::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffb627'%3E%3Cpath d='M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z'/%3E%3C/svg%3E");
+}
+
+/* Hover effects */
+.stAlert .stAlertContainer:hover {
+  transform: translateY(-2px) !important;
+  transition: all 0.3s ease !important;
+}
+
+.stAlert .stAlertContainer:has([data-testid="stAlertContentSuccess"]):hover {
+  box-shadow: 0 5px 35px rgba(0, 255, 157, 0.5), inset 0 0 25px rgba(0, 255, 157, 0.2) !important;
+}
+
+.stAlert .stAlertContainer:has([data-testid="stAlertContentError"]):hover {
+  box-shadow: 0 5px 35px rgba(255, 56, 100, 0.5), inset 0 0 25px rgba(255, 56, 100, 0.2) !important;
+}
+
+.stAlert .stAlertContainer:has([data-testid="stAlertContentWarning"]):hover {
+  box-shadow: 0 5px 35px rgba(255, 182, 39, 0.5), inset 0 0 25px rgba(255, 182, 39, 0.2) !important;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .stAlert .stAlertContainer {
+    padding: 1rem !important;
+    margin: 0.5rem 0 !important;
+  }
+
+  .stAlert [data-testid="stMarkdownContainer"] p {
+    font-size: 1rem !important;
+  }
+
+  .stAlert .st-emotion-cache-1ii4qqd::before {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+  }
+}
+
+/* Success count styling */
+.success-count {
+  font-family: "Orbitron", monospace !important;
+  font-weight: bold !important;
+  color: #00ff00 !important;
+  text-shadow: 0 0 10px #00ff00 !important;
+  font-size: 1.2rem !important;
+}
+
+/* Columns styling */
+.css-ocqkz7 {
+  gap: 2rem !important;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a2e;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00ffff, #ff00ff);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ff00ff, #00ffff);
+}
+
+/* Loading animation */
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.stSpinner {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem !important;
+  }
+
+  .model-card {
+    margin-bottom: 1rem !important;
+    padding: 1rem !important;
+  }
+
+  .model-name {
+    font-size: 1.1rem !important;
+  }
+}
+
+/* Additional cyber elements */
+.cyber-border {
+  position: relative;
+}
+
+.cyber-border::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #00ffff, #ff00ff, #00ffff);
+  border-radius: inherit;
+  z-index: -1;
+  animation: borderRotate 3s linear infinite;
+}
+
+@keyframes borderRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Glitch effect for errors */
+.error-card {
+  animation: glitch 0.3s ease-in-out infinite alternate;
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
