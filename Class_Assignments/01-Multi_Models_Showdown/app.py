@@ -37,9 +37,24 @@ client = AsyncOpenAI(api_key=API_KEY, base_url=BASE_URL)
 set_tracing_disabled(disabled=True)
 
 # Custom CSS for styling
-with open("style.css", "r") as f:
-    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-
+css_path = os.path.join(os.path.dirname(__file__), "style.css")
+try:
+    with open(css_path, "r") as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+except FileNotFoundError:
+    st.markdown("""
+    <style>
+    /* Fallback basic styles */
+    .model-card {
+        border-radius: 10px;
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+    st.warning("Custom CSS file not found. Using default styles.")
+    
+    
 async def get_model_response(model_name: str, model_id: str, prompt: str):
     """Get response from a single model with error handling"""
     try:
