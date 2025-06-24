@@ -5,7 +5,7 @@ import os, asyncio, requests
 
 # Load environment
 load_dotenv()
-api_key = os.getenv("OPENROUTER_API_KEY")
+api_key = os.getenv("GEMINI_API_KEY")
 if not api_key:
     st.error("OPENROUTER_API_KEY not found!")
     st.stop()
@@ -24,8 +24,8 @@ except FileNotFoundError:
     st.warning("Custom CSS file not found. Using default styles.")
     
     
-MODEL = "meta-llama/llama-3.3-70b-instruct:free" #"meta-llama/llama-4-scout:free" 
-BASE_URL = "https://openrouter.ai/api/v1"
+MODEL = "gemini-2.0-flash" #"meta-llama/llama-4-scout:free" 
+BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai/"
 client = AsyncOpenAI(api_key=api_key, base_url=BASE_URL)
 set_tracing_disabled(disabled=True)
 

@@ -4,12 +4,12 @@ import os, asyncio, requests
 
 # Load environment
 load_dotenv()
-api_key = os.getenv("OPENROUTER_API_KEY")
+api_key = os.getenv("GEMINI_API_KEY")
 if not api_key:
-    raise ValueError("OPENROUTER_API_KEY not found!")
+    raise ValueError("GEMINI_API_KEY not found!")
 
-MODEL = "meta-llama/llama-4-scout:free"
-BASE_URL = "https://openrouter.ai/api/v1"
+MODEL = "gemini-2.0-flash" #"meta-llama/llama-4-scout:free"
+BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai/" #"https://openrouter.ai/api/v1"
 client = AsyncOpenAI(api_key=api_key, base_url=BASE_URL)
 set_tracing_disabled(disabled=True)
 
