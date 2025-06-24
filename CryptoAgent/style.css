@@ -1,0 +1,331 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* Root Variables - Crypto Theme Colors */
+:root {
+    --primary-bg: #0a0e1a;
+    --secondary-bg: #1a1f2e;
+    --accent-bg: #252b3d;
+    --card-bg: rgba(26, 31, 46, 0.8);
+    --border-color: #2d3748;
+    --text-primary: #ffffff;
+    --text-secondary: #a0aec0;
+    --text-muted: #718096;
+    --accent-green: #00d4aa;
+    --accent-blue: #3182ce;
+    --accent-purple: #805ad5;
+    --accent-gold: #f6ad55;
+    --danger-red: #e53e3e;
+    --success-green: #38a169;
+    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-secondary: linear-gradient(135deg, #00d4aa 0%, #3182ce 100%);
+    --gradient-accent: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --shadow-glow: 0 0 20px rgba(0, 212, 170, 0.3);
+    --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Global Styles */
+* {
+    box-sizing: border-box;
+}
+
+.st-emotion-cache-scp8yw {
+    display: none !important;
+}
+
+/* Main App Container */
+.stApp {
+    background: var(--primary-bg);
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Header Styling */
+.stApp > header {
+    background: transparent !important;
+}
+
+/* Main Content Area */
+.main .block-container {
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    background: rgba(26, 31, 46, 0.1);
+    border-radius: 20px;
+    margin: 1rem auto;
+    border: 1px solid var(--border-color);
+}
+
+/* Title Styling */
+h1 {
+    background: var(--gradient-secondary);
+    background-clip: text;
+    font-weight: 700;
+    font-size: 3rem !important;
+    text-align: center;
+    margin-bottom: 0.5rem !important;
+    text-shadow: 0 0 30px rgba(0, 212, 170, 0.5);
+}
+
+/* Caption/Subtitle */
+.st-emotion-cache-pphips {
+    text-align: center;
+    color: var(--text-secondary) !important;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+/* Chat Message Containers */
+.stChatMessage {
+    background: var(--card-bg) !important;
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    margin: 1rem 0;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-card);
+    transition: all 0.3s ease;
+}
+
+.stChatMessage:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+    border-color: var(--accent-green);
+}
+
+/* User Messages */
+.stChatMessage[data-testid*="user"] {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+    border-left: 4px solid var(--accent-purple);
+}
+
+/* Assistant Messages */
+.stChatMessage[data-testid*="assistant"] {
+    background: linear-gradient(135deg, rgba(0, 212, 170, 0.1) 0%, rgba(49, 130, 206, 0.1) 100%);
+    border-left: 4px solid var(--accent-green);
+}
+
+/* Chat Message Text */
+.stChatMessage p {
+    color: var(--text-primary) !important;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Chat Input */
+.stChatInput {
+    background: var(--secondary-bg) !important;
+    border: 2px solid var(--border-color) !important;
+    border-radius: 25px !important;
+    color: var(--text-primary) !important;
+    font-size: 1rem;
+    padding: 1rem 1.5rem !important;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.st-emotion-cache-1y34ygi {
+    padding: 0 !important;
+    background: var(--primary-bg);
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
+}
+
+.stChatInput:focus {
+    border-color: var(--accent-green) !important;
+    box-shadow: var(--shadow-glow) !important;
+    outline: none !important;
+}
+
+.stChatInput::placeholder {
+    color: var(--text-muted) !important;
+}
+
+/* Buttons */
+.stButton > button {
+    background: var(--gradient-secondary) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 12px !important;
+    padding: 0.75rem 2rem !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+    transition: all 0.3s ease !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stButton > button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: var(--shadow-glow) !important;
+    background: var(--gradient-primary) !important;
+}
+
+/* Expander (Debug Console) */
+.streamlit-expanderHeader {
+    background: var(--accent-bg) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 12px !important;
+    font-weight: 600 !important;
+    padding: 1rem !important;
+    transition: all 0.3s ease;
+}
+
+.streamlit-expanderHeader:hover {
+    background: var(--secondary-bg) !important;
+    border-color: var(--accent-green) !important;
+}
+
+.streamlit-expanderContent {
+    background: var(--card-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    border-top: none !important;
+    border-radius: 0 0 12px 12px !important;
+    padding: 1rem !important;
+}
+
+/* Code Blocks */
+.stCode {
+    background: var(--primary-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 8px !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    color: var(--accent-green) !important;
+    padding: 1rem !important;
+    margin: 0.5rem 0 !important;
+    font-size: 0.9rem !important;
+}
+
+/* Spinner */
+.stSpinner {
+    color: var(--accent-green) !important;
+}
+
+/* Sidebar (if used) */
+.css-1d391kg {
+    background: var(--secondary-bg) !important;
+    border-right: 1px solid var(--border-color) !important;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--primary-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-green);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-blue);
+}
+
+/* Metric Cards (if used) */
+.metric-container {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.metric-container:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-glow);
+}
+
+/* Custom Crypto Price Display */
+.crypto-price {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--accent-green);
+}
+
+.crypto-change-positive {
+    color: var(--success-green);
+}
+
+.crypto-change-negative {
+    color: var(--danger-red);
+}
+
+/* Loading Animation */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.loading {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main .block-container {
+        padding: 1rem 0.5rem;
+        margin: 0.5rem;
+        border-radius: 15px;
+    }
+    
+    h1 {
+        font-size: 2rem !important;
+    }
+    
+    .stChatMessage {
+        padding: 1rem;
+        margin: 0.5rem 0;
+    }
+}
+
+/* Hide Streamlit Branding */
+#MainMenu {
+    visibility: hidden;
+}
+
+.stDeployButton {
+    visibility: hidden;
+}
+
+footer {
+    visibility: hidden;
+}
+
+/* Custom Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stChatMessage {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+/* Glow Effect for Important Elements */
+.glow {
+    box-shadow: 0 0 20px rgba(0, 212, 170, 0.6);
+}
+
