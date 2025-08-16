@@ -13,7 +13,7 @@ if not api_key:
 MODEL = "gemini-2.0-flash" 
 BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai/" 
 client = AsyncOpenAI(api_key=api_key, base_url=BASE_URL)
-set_tracing_disabled(disabled=True)
+# set_tracing_disabled(disabled=True)
 
 class EscalationData(BaseModel):
     reason: str
